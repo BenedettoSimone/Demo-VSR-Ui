@@ -117,12 +117,12 @@ start_button.addEventListener('click', function() {
 
         video_local = new Blob(blobs_recorded, { type: 'video/webm' });
 
-        name_lastname = document.getElementById('name-lastname').value;
-        phrase =  document.getElementById(counter).textContent;
+        //name_lastname = document.getElementById('name-lastname').value;
+        //phrase =  document.getElementById(counter).textContent;
         //var matches = phrase.match(/\b(\w)/g); // ['J','S','O','N']
         //phrase_code = matches.join('');
 
-        download_link.download = phrases.indexOf(phrase) + '-'+ name_lastname.toLowerCase() + '.mpg'
+        //download_link.download = phrases.indexOf(phrase) + '-'+ name_lastname.toLowerCase() + '.mpg'
         //stop_button.style.display = 'none';
         div_recording.style.display = 'none';
         download_link.style.display = 'block';
@@ -177,13 +177,13 @@ download_link.addEventListener('click', async function () {
     var response;
     if(check){
         console.log("ITA:"+check);
-        response = await fetch('http://127.0.0.1:5000/upload', {
+        response = await fetch('http://192.168.1.193:5001/upload', {
             method: "POST",
             body: data
         });
     }else{
         console.log("ENGL:"+check);
-        response = await fetch('http://127.0.0.1:5000/upload', {
+        response = await fetch('http://192.168.1.193:5001/upload', {
             method: "POST",
             body: data
         });
